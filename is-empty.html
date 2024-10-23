@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Empty arrays</title>
+    <title>JavaScript Emptiness</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fippli/css@latest/regular.css"
@@ -21,7 +21,7 @@
     </header>
     <main>
       <article>
-        <h1>Empty arrays in javascript</h1>
+        <h1>JavaScript Emptiness</h1>
 
         <p>
           This
@@ -29,14 +29,70 @@
           is easier to read than
           <code class="language-javascript"> [].length === 0 // true </code>
 
-          But in Javascript if you try that you will get an error saying
+          But if you try that you will get an error saying
           <code>Uncaught TypeError: [].isEmpty is not a function</code>
 
-          But you can easily prototype this behavior with the following code:
-          <code class="language-javascript">
-            Array.prototype.isEmpty = function() { return this.length === 0;}
-          </code>
+         You can easily prototype this behavior.
+         <h2>Arrays</h2>
+          <pre><code class="language-javascript">Array.prototype.isEmpty = function() {
+  return this.length === 0;
+}</code></pre>
+
+<pre><code class="language-javascript">// Examples
+
+[].isEmpty(); // true
+
+const a = [];
+a.isEmpty(); // true
+</code></pre>
         </p>
+
+        <h2>Strings</h2>
+        
+        <pre><code class="language-javascript">String.prototype.isEmpty = function() { 
+  return this.length === 0;
+}</code></pre>
+
+<pre><code class="language-javascript">// Examples
+
+"".isEmpty(); // true
+
+const s = '';
+s.isEmpty(); // true
+</code></pre>
+
+<h2>Objects</h2>
+<p>
+<code class="language-javascript">{}.isEmpty();</code>
+wont work but it does if you define an object first.</p>
+<pre><code class="language-javascript">Object.prototype.isEmpty = function() { 
+  return Object.keys(this).length === 0;
+}</code></pre>
+
+Will work if you first define an object.
+<pre><code class="language-javascript">// Examples
+
+const o = {};
+o.isEmpty(); // true
+</code></pre>
+</p>
+
+<h2>Conclusion</h2>
+<p>Let's sum this up with a little "file" you can use</p>
+<pre><code class="language-javascript">// isEmpty.js
+
+Array.prototype.isEmpty = function() {
+  return this.length === 0;
+}
+
+String.prototype.isEmpty = function() {
+  return this.length === 0;
+}
+
+Object.prototype.isEmpty = function() { 
+  return Object.keys(this).length === 0;
+}
+</code></pre>
       </article>
     </main>
 

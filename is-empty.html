@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empty arrays</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fippli/css@latest/regular.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs@v1/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Blog</a>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h1>Empty arrays in javascript</h1>
+
+        <p>
+          This
+          <code class="language-javascript"> [].isEmpty() // true </code>
+          is easier to read than
+          <code class="language-javascript"> [].length === 0 // true </code>
+
+          But in Javascript if you try that you will get an error saying
+          <code>Uncaught TypeError: [].isEmpty is not a function</code>
+
+          But you can easily prototype this behavior with the following code:
+          <code class="language-javascript">
+            Array.prototype.isEmpty = function() { return this.length === 0;}
+          </code>
+        </p>
+      </article>
+    </main>
+
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@v1/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@v1/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>

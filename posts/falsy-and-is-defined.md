@@ -1,7 +1,10 @@
 ---
-title: Falsy/Truthy
+title: Why falsiness is a bad idea
 description: |
-  this is a desc (replace)
+  Why this is a bad idea
+  ```javascript
+  if (myData) doSomething()
+  ```
 ---
 
 # Why falsiness is a bad idea
@@ -27,8 +30,8 @@ So when JavaScript developers want to check if thier variable is populated with 
 ```javascript
 function(x) {
   if (x) {
-  // We have a value
-  doSomething();
+    // We have a value
+    doSomething();
   }
 }
 ```
@@ -49,7 +52,13 @@ function(x) {
 
 Or another one I've tried `![null, undefined].includes(x)`.
 
-This is a pretty nice function we can call `const isDefined = (x) => ![null, undefined].includes(x)` and use it in our code.
+This is a pretty nice function we can call
+
+```javascript
+const isDefined = (x) => ![null, undefined].includes(x);
+```
+
+and use it in our code.
 
 It makes a lot of sense
 

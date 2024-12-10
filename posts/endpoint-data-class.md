@@ -1,7 +1,10 @@
 ---
 title: Endpoint Data Class
 description: |
-  this is the description (replace this)
+  (work in progress...)
+  ```javascript
+  const user = new Endpoint("user/:id");
+  ```
 ---
 
 # Endpoint Data Class

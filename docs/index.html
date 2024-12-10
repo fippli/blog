@@ -50,7 +50,7 @@
       </figure>
 
       <figure>
-        <img alt="A picture of me" src="./me.jpeg" />
+        <img alt="A picture of me" src="../me.jpeg" />
         <figcaption>This is me...</figcaption>
       </figure>
 
@@ -66,13 +66,40 @@
           <h3>
             <a href="endpoint-data-class.html">Endpoint Data Class</a>
           </h3>
-          <p>this is the description (replace this)</p>
+          <p>(work in progress…)</p>
+          <pre><code class="javascript language-javascript">const user = new Endpoint("user/:id");
+</code></pre>
         </li>
         <li>
           <h3>
-            <a href="falsy-and-is-defined.html">Falsy/Truthy</a>
+            <a href="falsy-and-is-defined.html">Why falsiness is a bad idea</a>
           </h3>
-          <p>this is a desc (replace)</p>
+          <p>Why this is a bad idea</p>
+          <pre><code class="javascript language-javascript">if (myData) doSomething()
+</code></pre>
+        </li>
+        <li>
+          <h3>
+            <a href="general-reducer-action-switch.html"
+              >General Reducer Action Switch</a
+            >
+          </h3>
+          <pre><code class="javascript language-javascript">dispatch({ $set: { count: 1 } })
+</code></pre>
+        </li>
+        <li>
+          <h3>
+            <a href="is-empty.html">Javascript Emptiness</a>
+          </h3>
+          <pre><code class="javascript language-javascript">[].isEmpty() // true
+</code></pre>
+        </li>
+        <li>
+          <h3>
+            <a href="reducer.html">React reducer idea</a>
+          </h3>
+          <pre><code class="javascript language-javascript">dispatch(action1, action2, action3, ...)
+</code></pre>
         </li>
       </ul>
     </main>

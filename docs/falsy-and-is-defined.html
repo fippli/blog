@@ -52,8 +52,8 @@
         </p>
         <pre><code class="javascript language-javascript">function(x) {
   if (x) {
-  // We have a value
-  doSomething();
+    // We have a value
+    doSomething();
   }
 }
 </code></pre>
@@ -73,13 +73,10 @@
         <p>
           Or another one I've tried <code>![null, undefined].includes(x)</code>.
         </p>
-        <p>
-          This is a pretty nice function we can call
-          <code
-            >const isDefined = (x) =&gt; ![null, undefined].includes(x)</code
-          >
-          and use it in our code.
-        </p>
+        <p>This is a pretty nice function we can call</p>
+        <pre><code class="javascript language-javascript">const isDefined = (x) =&gt; ![null, undefined].includes(x);
+</code></pre>
+        <p>and use it in our code.</p>
         <p>It makes a lot of sense</p>
         <pre><code class="javascript language-javascript">function(x) {
   if (isDefined(x)) {

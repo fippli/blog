@@ -7,6 +7,7 @@
     "showdown": "^2.1.0"
   },
   "scripts": {
+    "fmt": "prettier --write ./posts",
     "build": "node build.js && prettier --write ./docs"
   }
 }

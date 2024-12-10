@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "handlebars": "^4.7.8",
+    "html-validator": "^6.0.1",
+    "prettier": "^3.4.2",
+    "showdown": "^2.1.0"
+  },
+  "scripts": {
+    "build": "node build.js && prettier --write ./docs"
+  }
+}

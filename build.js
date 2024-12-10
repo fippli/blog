@@ -4,6 +4,11 @@ const showdown = require("showdown");
 const handlebars = require("handlebars");
 const matter = require("gray-matter");
 
+// create docs if it doesn't exist
+if (!fs.existsSync("docs")) {
+  fs.mkdirSync("docs");
+}
+
 const postsDir = path.join(__dirname, "posts");
 const docsDir = path.join(__dirname, "docs");
 

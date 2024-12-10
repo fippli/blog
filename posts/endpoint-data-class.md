@@ -1,4 +1,6 @@
 ---
+status: draft
+date: 2024-??-??
 title: Endpoint Data Class
 description: |
   (work in progress...)

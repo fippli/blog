@@ -32,16 +32,36 @@ try {
   files.forEach((file) => {
     if (path.extname(file) === ".md") {
       const filePath = path.join(postsDir, file);
-      const fileName = path.basename(file, ".md");
+      const fileName = `${path.basename(file, ".md")}.html`;
 
       const markdownContent = fs.readFileSync(filePath, "utf8");
       const { data, content } = matter(markdownContent);
       const article = converter.makeHtml(content);
+      const html = template({ article, title: data.title });
 
-      const html = template({ article });
+      switch (data.status) {
+        case "published": {
+          posts.push({ ...data, fileName });
+          fs.writeFileSync(path.join(docsDir, fileName), html);
+          break;
+        }
+        case "draft": {
+          // if the file exists, delete it
+          if (fs.existsSync(path.join(docsDir, fileName))) {
+            fs.unlinkSync(path.join(docsDir, fileName));
+          }
+          break;
+        }
 
-      posts.push({ ...data, fileName: `${fileName}.html` });
-      fs.writeFileSync(path.join(docsDir, `${fileName}.html`), html);
+        case "unlisted": {
+          fs.writeFileSync(path.join(docsDir, fileName), html);
+          break;
+        }
+
+        default: {
+          break;
+        }
+      }
     }
   });
 } catch (err) {
@@ -54,6 +74,9 @@ try {
 //
 
 const postsHtml = posts
+  .toSorted((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  })
   .map((post) => {
     const description = converter.makeHtml(post.description);
     return `<li>

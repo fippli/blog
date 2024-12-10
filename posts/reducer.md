@@ -1,4 +1,6 @@
 ---
+status: published
+date: 2024-??-??
 title: React reducer idea
 description: |
   ```javascript

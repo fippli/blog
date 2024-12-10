@@ -1,4 +1,6 @@
 ---
+status: published
+date: 2024-??-??
 title: Javascript Emptiness
 description: |
   ```javascript

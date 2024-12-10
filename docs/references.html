@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Chief Pig Makeup Artist -</title>
+    <title>The Chief Pig Makeup Artist - References</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link
       rel="stylesheet"
@@ -26,28 +26,26 @@
 
     <main>
       <article>
-        <h1 id="endpointdataclass">Endpoint Data Class</h1>
-        <p>I want a class that works like this:</p>
-        <pre><code class="javascript language-javascript">const someEndpoint = new Endpoint("/foo/:id");
-
-// Construct the endpoint with parameters and query
-// NOTE: should only be callable once. We want to avoid
-// mutating the endpoint by mistake...
-someEndpoint
-  .parameters({
-    id: "c4cf8dd7-0374-45e7-bdf2-31f09ff38675",
-  })
-  .query({
-    q: 123,
-  });
-
-someEndpoint.toString(); // =&gt; '/foo/c4cf8dd7-0374-45e7-bdf2-31f09ff38675?q=123'
-
-someEndpoint.get(); // api GET request to backend
-
-someEndpoint.post(body); // api POST request to backend
-</code></pre>
-        <p>etc. etc. Let's build it :) <em>To be continued…</em></p>
+        <h1 id="references">References</h1>
+        <ul>
+          <li>
+            <a href="https://curtclifton.net/papers/MoseleyMarks06a.pdf"
+              >Out of the tar pit</a
+            >
+          </li>
+          <li>
+            <a href="https://mostly-adequate.gitbook.io/mostly-adequate-guide"
+              >Professor Frisbys Mostly Adequate Guide To Functional
+              Programming</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melconway.com/Home/pdf/committees.pdf"
+              >How Do Committees Invent?</a
+            >
+            <em>Melvin E. Conway</em>
+          </li>
+        </ul>
       </article>
     </main>
 

@@ -1,4 +1,6 @@
 ---
+status: published
+date: 2024-??-??
 title: General Reducer Action Switch
 description: |
   ```javascript

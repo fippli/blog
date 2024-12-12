@@ -8,7 +8,7 @@ description: |
 
 # Nullish coalescing operator
 
-I wrote a post about how checking [truthy-/falsiness]() is prone to bugs. When it comes to defaulting to a value in javascript there are two ways.
+I wrote a post about how checking [truthy-/falsiness](falsy-and-is-defined.html) is prone to bugs. When it comes to defaulting to a value in javascript there are two ways.
 
 You might have seen `||` or "logical or" ([read more here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR)). So for example
 

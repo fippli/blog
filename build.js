@@ -78,13 +78,17 @@ const postsHtml = posts
     return new Date(b.date) - new Date(a.date);
   })
   .map((post) => {
+    console.log(post.date);
     const description = converter.makeHtml(post.description);
-    return `<li>
-            <h3>
-              <a href="${post.fileName}">${post.title}</a>
-            </h3>
-            ${description}
-          </li>`;
+    return `
+<li>
+  <h3>${post.title}</h3>
+  <p class="date">${post.date.toISOString().split("T").at(0)}</p>
+  ${description}
+  <div class="button-link-wrapper">
+    <a href="${post.fileName}" class="button-link">Read this post</a>
+  </div>
+</li>`;
   })
   .join("");
 

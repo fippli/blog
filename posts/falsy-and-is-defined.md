@@ -1,6 +1,6 @@
 ---
 status: published
-date: 2024-??-??
+date: 2024-10-25
 title: Why falsiness is a bad idea
 description: |
   Why this is a bad idea

@@ -78,7 +78,6 @@ const postsHtml = posts
     return new Date(b.date) - new Date(a.date);
   })
   .map((post) => {
-    console.log(post.date);
     const description = converter.makeHtml(post.description);
     return `
 <li>

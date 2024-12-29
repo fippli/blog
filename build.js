@@ -73,25 +73,26 @@ try {
 // Generate index.html
 //
 
-const postsHtml = posts
-  .toSorted((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  })
-  .map((post) => {
-    const description = converter.makeHtml(post.description);
-    return `
+// Make newest posts appear first
+const sortByDate = (a, b) => new Date(b.date) - new Date(a.date);
+
+// List the published posts in index.html
+const createPostListItem = (post) => {
+  const description = converter.makeHtml(post.description);
+  return `
 <li>
-  <h3>${post.title}</h3>
-  <p class="date">${post.date.toISOString().split("T").at(0)}</p>
-  ${description}
-  <div class="button-link-wrapper">
-    <a href="${post.fileName}" class="button-link">Read this post</a>
-  </div>
+<h3>${post.title}</h3>
+<p class="date">${post.date.toISOString().split("T").at(0)}</p>
+${description}
+<div class="button-link-wrapper">
+  <a href="${post.fileName}" class="button-link">Read this post</a>
+</div>
 </li>`;
-  })
-  .join("");
+};
 
 try {
+  const postsHtml = posts.toSorted(sortByDate).map(createPostListItem).join("");
+
   const indexTemplateHtml = fs.readFileSync(
     path.join(__dirname, "index.template.html"),
     "utf8",

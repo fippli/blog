@@ -15,3 +15,4 @@ description: List of reference information
 - [Breaking Paragraphs into Lines](http://www.eprg.org/G53DOC/pdfs/knuth-plass-breaking.pdf)
   \- _Donald E. Knuth, Michael F. Plass_
 - [Why numbering should start at zero](https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD831.html) \- _Edsger W. Dijkstra_
+- [Enum representations](https://serde.rs/enum-representations.html) \- Rust documentation
